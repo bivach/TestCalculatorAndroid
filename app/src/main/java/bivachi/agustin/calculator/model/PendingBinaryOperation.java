@@ -30,4 +30,7 @@ public class PendingBinaryOperation {
     return currentOperationToPerform;
   }
 
+  public void setFirstOperand(Double firstOperand) {
+    this.firstOperand = firstOperand;
+  }
 }
