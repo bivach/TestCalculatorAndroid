@@ -33,9 +33,8 @@ public class CalculatorActivity extends AppCompatActivity {
   }
 
   private Double getDisplayValue() {
-    String display = displayTextView.getText().toString().replace(".", "").replace(",",".");
-    /*replace methods are for not having errors with the Number Format*/
-
+    String display = displayTextView.getText().toString().replace(".", "").replace(",",".").replace("Error","0");
+    /*replace methods are for prevent errors with the Number Format and if users types x/0 */
     return Double.parseDouble(display);
   }
 
@@ -61,8 +60,7 @@ public class CalculatorActivity extends AppCompatActivity {
     }
 
     userPerformEquals = operatorSymbol.equals("=");
-
-    displayTextView.setText(formatNumber(calculatorController.getResult()));
+    displayTextView.setText(calculatorController.getResult());
 
   }
 
@@ -72,11 +70,5 @@ public class CalculatorActivity extends AppCompatActivity {
     userPerformEquals = false;
     calculatorController.reset();
   }
-
-  public String formatNumber(Double result) {
-    NumberFormat nf = NumberFormat.getNumberInstance(Locale.GERMAN);
-    DecimalFormat decimalFormat = (DecimalFormat)nf;
-    return decimalFormat.format(result);
-  }
-
+  
 }

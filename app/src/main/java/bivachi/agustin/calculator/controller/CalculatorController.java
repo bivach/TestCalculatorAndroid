@@ -1,5 +1,9 @@
 package bivachi.agustin.calculator.controller;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
+
 import bivachi.agustin.calculator.model.PendingBinaryOperation;
 
 /**
@@ -18,8 +22,13 @@ public class CalculatorController {
     this.accumulator = accumulator;
   }
 
-  public Double getResult(){
-    return accumulator;
+  public String getResult(){
+    if (accumulator!=null){
+      return formatNumber(accumulator);
+    }else {
+      accumulator = 0.0;
+      return "Error";
+    }
   }
 
   public void performOperation(String currentSymbol) {
@@ -37,6 +46,12 @@ public class CalculatorController {
   public void reset() {
     this.accumulator = 0.0;
     this.pendingOperation = null;
+  }
+
+  public String formatNumber(Double result) {
+    NumberFormat nf = NumberFormat.getNumberInstance(Locale.GERMAN);
+    DecimalFormat decimalFormat = (DecimalFormat)nf;
+    return decimalFormat.format(result);
   }
 
 }

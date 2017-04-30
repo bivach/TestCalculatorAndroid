@@ -6,8 +6,8 @@ package bivachi.agustin.calculator.model;
 public class Multiply extends Operation {
 
   @Override
-  public Double calculate(Double firstArgument, Double secondArgument) {
-    return firstArgument*secondArgument;
+  public Double calculate(Double firstOperand, Double accumulator) {
+    return firstOperand*accumulator;
   }
 
 }
