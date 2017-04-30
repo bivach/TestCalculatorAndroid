@@ -34,7 +34,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
   private Double getDisplayValue() {
     String display = displayTextView.getText().toString().replace(".", "").replace(",",".").replace("Error","0");
-    /*replace methods are for prevent errors with the Number Format and if users types x/0 */
+    /*  replace methods are for Double parse and to handle user error if types x/0  */
     return Double.parseDouble(display);
   }
 
@@ -70,5 +70,5 @@ public class CalculatorActivity extends AppCompatActivity {
     userPerformEquals = false;
     calculatorController.reset();
   }
-  
+
 }

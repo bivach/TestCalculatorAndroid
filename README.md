@@ -1,3 +1,3 @@
-# calculator
-Diagrama de Clases Calculadora Android Test
-![alt text](https://k60.kn3.net/F/B/6/9/B/9/223.png)
+# Diagrama de Clases Calculadora Android Test
+
+![alt text](https://k61.kn3.net/3/6/0/D/1/1/B26.png)
