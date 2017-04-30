@@ -26,8 +26,7 @@ public class CalculatorController {
     if (accumulator!=null){
       return formatNumber(accumulator);
     }else {
-      accumulator = 0.0;
-      pendingOperation.setFirstOperand(0.0);
+      reset();
       return "Error";
     }
   }
