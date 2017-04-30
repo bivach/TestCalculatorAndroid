@@ -23,11 +23,11 @@ public class CalculatorController {
   }
 
   public void performOperation(String currentSymbol) {
-      calculateBinaryOperation();
+      executePendingBinaryOperation();
       pendingOperation = new PendingBinaryOperation(accumulator,currentSymbol);
   }
 
-  private void calculateBinaryOperation() {
+  private void executePendingBinaryOperation() {
     if (pendingOperation != null) {
       accumulator = pendingOperation.getCurrentOperationToPerform().calculate(pendingOperation.getFirstOperand(), accumulator);
       pendingOperation = null;
