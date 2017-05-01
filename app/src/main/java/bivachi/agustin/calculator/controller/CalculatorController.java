@@ -16,6 +16,7 @@ public class CalculatorController {
 
   public CalculatorController() {
     this.accumulator = 0.0;
+    this.pendingOperation = new PendingBinaryOperation();
   }
 
   public void setAccumulator(String display) {
@@ -33,19 +34,19 @@ public class CalculatorController {
 
   public void performOperation(String currentSymbol) {
       executePendingBinaryOperation();
-      pendingOperation = new PendingBinaryOperation(accumulator,currentSymbol);
+      pendingOperation.setOperationValues(accumulator,currentSymbol);
   }
 
   private void executePendingBinaryOperation() {
-    if (pendingOperation != null) {
+    if (pendingOperation.getCurrentOperationToPerform() != null) {
       accumulator = pendingOperation.getCurrentOperationToPerform().calculate(pendingOperation.getFirstOperand(), accumulator);
-      pendingOperation = null;
+      pendingOperation.setCurrentOperationToPerform(null);
     }
   }
 
   public void reset() {
     this.accumulator = 0.0;
-    this.pendingOperation = null;
+    pendingOperation.setCurrentOperationToPerform(null);
   }
 
   public String formatNumberToString(Double result) {

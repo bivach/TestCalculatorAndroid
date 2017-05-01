@@ -9,17 +9,14 @@ import java.util.Map;
 public class PendingBinaryOperation {
   private Double firstOperand;
   private Operation currentOperationToPerform;
-  private Map<String, Operation> operations;
+  Map<String, Operation> operations = new HashMap<>();
 
-  public PendingBinaryOperation(Double firstOperand,String currentSymbol) {
-    this.firstOperand = firstOperand;
-    this.operations = new HashMap<>();
-    this.operations.put("x",new Multiply());
-    this.operations.put("+",new Addition());
-    this.operations.put("-",new Subtraction());
-    this.operations.put("÷",new Division());
-    this.operations.put("=",new Equals());
-    this.currentOperationToPerform = operations.get(currentSymbol);
+  public PendingBinaryOperation() {
+    operations.put("x",new Multiply());
+    operations.put("+",new Addition());
+    operations.put("-",new Subtraction());
+    operations.put("÷",new Division());
+    operations.put("=",new Equals());
   }
 
   public Double getFirstOperand() {
@@ -30,4 +27,13 @@ public class PendingBinaryOperation {
     return currentOperationToPerform;
   }
 
+  public void setCurrentOperationToPerform(Operation currentOperationToPerform) {
+    this.currentOperationToPerform = currentOperationToPerform;
+  }
+
+  public void setOperationValues(Double firstOperand, String currentSymbol){
+    this.firstOperand = firstOperand;
+    this.currentOperationToPerform = operations.get(currentSymbol);
+
+  }
 }
