@@ -27,13 +27,13 @@ public class PendingBinaryOperation {
     return currentOperationToPerform;
   }
 
-  public void setCurrentOperationToPerform(Operation currentOperationToPerform) {
-    this.currentOperationToPerform = currentOperationToPerform;
+  public void resetPendingBinaryOperation() {
+    this.currentOperationToPerform = null;
+    this.firstOperand = null;
   }
 
   public void setOperationValues(Double firstOperand, String currentSymbol){
     this.firstOperand = firstOperand;
     this.currentOperationToPerform = operations.get(currentSymbol);
-
   }
 }

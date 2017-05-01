@@ -40,13 +40,13 @@ public class CalculatorController {
   private void executePendingBinaryOperation() {
     if (pendingOperation.getCurrentOperationToPerform() != null) {
       accumulator = pendingOperation.getCurrentOperationToPerform().calculate(pendingOperation.getFirstOperand(), accumulator);
-      pendingOperation.setCurrentOperationToPerform(null);
+      pendingOperation.resetPendingBinaryOperation();
     }
   }
 
   public void reset() {
     this.accumulator = 0.0;
-    pendingOperation.setCurrentOperationToPerform(null);
+    pendingOperation.resetPendingBinaryOperation();
   }
 
   public String formatNumberToString(Double result) {
