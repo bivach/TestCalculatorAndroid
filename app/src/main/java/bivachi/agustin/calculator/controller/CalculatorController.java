@@ -18,13 +18,13 @@ public class CalculatorController {
     this.accumulator = 0.0;
   }
 
-  public void setAccumulator(Double accumulator) {
-    this.accumulator = accumulator;
+  public void setAccumulator(String display) {
+    this.accumulator = parseStringToNumber(display);
   }
 
   public String getResult(){
     if (accumulator!=null){
-      return formatNumber(accumulator);
+      return formatNumberToString(accumulator);
     }else {
       reset();
       return "Error";
@@ -48,10 +48,15 @@ public class CalculatorController {
     this.pendingOperation = null;
   }
 
-  public String formatNumber(Double result) {
+  public String formatNumberToString(Double result) {
     NumberFormat nf = NumberFormat.getNumberInstance(Locale.GERMAN);
     DecimalFormat decimalFormat = (DecimalFormat)nf;
     return decimalFormat.format(result);
+  }
+
+  private Double parseStringToNumber(String display) {
+    return Double.parseDouble(display.replace(".","").replace(",",".").replace("Error","0"));
+    //replace methods are to handle parse errors
   }
 
 }

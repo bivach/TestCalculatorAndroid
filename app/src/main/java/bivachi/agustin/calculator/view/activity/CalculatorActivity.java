@@ -6,9 +6,6 @@ import butterknife.BindView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.util.Locale;
 
 import bivachi.agustin.calculator.R;
 import bivachi.agustin.calculator.controller.CalculatorController;
@@ -32,16 +29,14 @@ public class CalculatorActivity extends AppCompatActivity {
     userPerformEquals = false;
   }
 
-  private Double getDisplayValue() {
-    String display = displayTextView.getText().toString().replace(".", "").replace(",",".").replace("Error","0");
-    /*  replace methods are for Double parse and to handle user error if types x/0  */
-    return Double.parseDouble(display);
+  private String getDisplayTxt() {
+    return displayTextView.getText().toString();
   }
 
   public void touchDigit(View v) {
     Button button = (Button) v;
-    if(userIsInTheMiddleOfTyping && !displayTextView.getText().equals("0")) {
-      displayTextView.setText(displayTextView.getText().toString() + button.getText());
+    if(userIsInTheMiddleOfTyping && !getDisplayTxt().equals("0")) {
+      displayTextView.setText(getDisplayTxt() + button.getText());
     }else{
       displayTextView.setText(button.getText().toString());
     }
@@ -54,7 +49,7 @@ public class CalculatorActivity extends AppCompatActivity {
     String operatorSymbol = button.getText().toString();
 
     if (userIsInTheMiddleOfTyping || userPerformEquals){
-      calculatorController.setAccumulator(getDisplayValue());
+      calculatorController.setAccumulator(getDisplayTxt());
       calculatorController.performOperation(operatorSymbol);
       userIsInTheMiddleOfTyping = false;
     }
