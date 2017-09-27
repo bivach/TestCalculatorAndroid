@@ -1,4 +1,4 @@
-package bivachi.agustin.calculator;
+package bivachi.agustin.kotlintest;
 
 import org.junit.Test;
 

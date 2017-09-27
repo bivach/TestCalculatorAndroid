@@ -1,4 +1,4 @@
-package bivachi.agustin.calculator.model;
+package bivachi.agustin.kotlintest.model;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,11 +12,11 @@ public class PendingBinaryOperation {
   Map<String, Operation> operations = new HashMap<>();
 
   public PendingBinaryOperation() {
-    operations.put("x",new Multiply());
-    operations.put("+",new Addition());
-    operations.put("-",new Subtraction());
-    operations.put("÷",new Division());
-    operations.put("=",new Equals());
+    operations.put("x", Operation.MULTIPLY);
+    operations.put("+", Operation.ADDITION);
+    operations.put("-", Operation.SUBTRACTION);
+    operations.put("÷", Operation.DIVISION);
+    operations.put("=", Operation.EQUALS);
   }
 
   public Double getFirstOperand() {
@@ -36,4 +36,5 @@ public class PendingBinaryOperation {
     this.firstOperand = firstOperand;
     this.currentOperationToPerform = operations.get(currentSymbol);
   }
+
 }

@@ -8,7 +8,8 @@
     <TextView
         android:id="@+id/displayTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="16.6"
         android:singleLine="true"
         android:background="@color/light_black"
         android:text="0"
@@ -21,7 +22,7 @@
         android:weightSum="100"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="20">
+        android:layout_weight="16.6">
 
         <Button
             android:id="@+id/buttonClear"
@@ -29,8 +30,7 @@
             android:layout_height="match_parent"
             style="@style/Buttons"
             android:text="C"
-            android:layout_weight="75.3"
-            android:onClick="clearAll"/>
+            android:layout_weight="75.2" />
 
         <Button
             android:id="@+id/buttonPercentage"
@@ -38,8 +38,7 @@
             android:layout_height="match_parent"
             android:text="÷"
             style="@style/Operators"
-            android:layout_weight="24.8"
-            android:onClick="performOperation"/>
+            android:layout_weight="24.8"/>
     </LinearLayout>
 
 
@@ -48,7 +47,7 @@
         android:weightSum="100"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="20">
+        android:layout_weight="16.6">
 
         <Button
             android:id="@+id/button7"
@@ -56,8 +55,7 @@
             android:layout_height="match_parent"
             style="@style/Buttons"
             android:text="7"
-            android:layout_weight="25"
-            android:onClick="touchDigit"/>
+            android:layout_weight="25"/>
 
         <Button
             android:id="@+id/button8"
@@ -65,8 +63,7 @@
             android:layout_height="match_parent"
             android:text="8"
             style="@style/Buttons"
-            android:layout_weight="25"
-            android:onClick="touchDigit"/>
+            android:layout_weight="25"/>
 
         <Button
             android:id="@+id/button9"
@@ -74,8 +71,7 @@
             android:layout_height="match_parent"
             style="@style/Buttons"
             android:text="9"
-            android:layout_weight="25"
-            android:onClick="touchDigit"/>
+            android:layout_weight="25"/>
 
         <Button
             android:id="@+id/buttonMultiply"
@@ -84,8 +80,7 @@
             android:text="x"
             android:textAllCaps="false"
             style="@style/Operators"
-            android:layout_weight="25"
-            android:onClick="performOperation"/>
+            android:layout_weight="25"/>
     </LinearLayout>
 
     <LinearLayout
@@ -93,7 +88,7 @@
         android:weightSum="100"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="20" >
+        android:layout_weight="16.6" >
 
         <Button
             android:id="@+id/button4"
@@ -101,8 +96,7 @@
             android:layout_height="match_parent"
             style="@style/Buttons"
             android:text="4"
-            android:layout_weight="25"
-            android:onClick="touchDigit"/>
+            android:layout_weight="25"/>
 
         <Button
             android:id="@+id/button5"
@@ -110,8 +104,7 @@
             android:layout_height="match_parent"
             android:text="5"
             style="@style/Buttons"
-            android:layout_weight="25"
-            android:onClick="touchDigit"/>
+            android:layout_weight="25"/>
 
         <Button
             android:id="@+id/button6"
@@ -119,8 +112,7 @@
             android:layout_height="match_parent"
             style="@style/Buttons"
             android:text="6"
-            android:layout_weight="25"
-            android:onClick="touchDigit"/>
+            android:layout_weight="25"/>
 
         <Button
             android:id="@+id/buttonSubtraction"
@@ -128,8 +120,7 @@
             android:layout_height="match_parent"
             android:text="-"
             style="@style/Operators"
-            android:layout_weight="25"
-            android:onClick="performOperation"/>
+            android:layout_weight="25"/>
     </LinearLayout>
 
     <LinearLayout
@@ -137,7 +128,7 @@
         android:weightSum="100"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="20" >
+        android:layout_weight="16.5" >
 
         <Button
             android:id="@+id/button1"
@@ -145,8 +136,7 @@
             android:layout_height="match_parent"
             style="@style/Buttons"
             android:text="1"
-            android:layout_weight="25"
-            android:onClick="touchDigit"/>
+            android:layout_weight="25"/>
 
         <Button
             android:id="@+id/button2"
@@ -154,8 +144,7 @@
             android:layout_height="match_parent"
             android:text="2"
             style="@style/Buttons"
-            android:layout_weight="25"
-            android:onClick="touchDigit"/>
+            android:layout_weight="25"/>
 
         <Button
             android:id="@+id/button3"
@@ -163,8 +152,7 @@
             android:layout_height="match_parent"
             style="@style/Buttons"
             android:text="3"
-            android:layout_weight="25"
-            android:onClick="touchDigit"/>
+            android:layout_weight="25"/>
 
         <Button
             android:id="@+id/buttonAdd"
@@ -172,8 +160,7 @@
             android:layout_height="match_parent"
             android:text="+"
             style="@style/Operators"
-            android:layout_weight="25"
-            android:onClick="performOperation"/>
+            android:layout_weight="25"/>
     </LinearLayout>
 
     <LinearLayout
@@ -181,7 +168,7 @@
         android:weightSum="100"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="20" >
+        android:layout_weight="16.99" >
 
         <Button
             android:id="@+id/button0"
@@ -189,8 +176,7 @@
             android:layout_height="match_parent"
             style="@style/Buttons"
             android:text="0"
-            android:layout_weight="75.3"
-            android:onClick="touchDigit"/>
+            android:layout_weight="75.2"/>
 
         <Button
             android:id="@+id/buttonEquals"
@@ -198,8 +184,7 @@
             android:layout_height="match_parent"
             android:text="="
             style="@style/Operators"
-            android:layout_weight="24.8"
-            android:onClick="performOperation"/>
+            android:layout_weight="24.8"/>
     </LinearLayout>
 
 </LinearLayout>

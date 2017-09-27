@@ -1,14 +1,16 @@
-package bivachi.agustin.calculator.view.activity;
+package bivachi.agustin.kotlintest.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import bivachi.agustin.kotlintest.controller.CalculatorController;
 import butterknife.BindView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import bivachi.agustin.calculator.R;
-import bivachi.agustin.calculator.controller.CalculatorController;
+import bivachi.agustin.kotlintest.R;
+
 import butterknife.ButterKnife;
 
 public class CalculatorActivity extends AppCompatActivity {
