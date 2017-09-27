@@ -40,7 +40,7 @@ class CalculatorController {
 
     private fun executePendingBinaryOperation() {
         if (pendingOperation.currentOperationToPerform != null) {
-            accumulator = pendingOperation.currentOperationToPerform.operation(pendingOperation.firstOperand, accumulator!!)
+            accumulator = pendingOperation.currentOperationToPerform!!.operation(pendingOperation.firstOperand!!, accumulator!!)
             pendingOperation.resetPendingBinaryOperation()
         }
     }
